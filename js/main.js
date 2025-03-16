@@ -36,6 +36,11 @@ ScrollReveal().reveal(".header__content .section__description", {
     delay: 1000,
 });
 
+ScrollReveal().reveal(".header__content .contact-btn", {
+    ...scrollRevealOption,
+    delay: 1500,
+});
+
 ScrollReveal().reveal(".about__image img", {
     ...scrollRevealOption,
     origin: "left",
@@ -74,6 +79,16 @@ fleet2Content.forEach((item) => {
     const duplicateNode = item.cloneNode(true);
     duplicateNode.setAttribute("aria-hidden", true);
     fleet2.appendChild(duplicateNode);
+});
+
+const banner = document.querySelector(".banner__clients");
+
+const bannerContent = Array.from(banner.children);
+
+bannerContent.forEach((item) => {
+    const duplicateNode = item.cloneNode(true);
+    duplicateNode.setAttribute("aria-hidden", true);
+    banner.appendChild(duplicateNode);
 });
 
 ScrollReveal().reveal(".feature__card", {

@@ -4,6 +4,7 @@
     --text-dark: #000000;
     --text-light: #767268;
     --extra-light: #f3f4f6;
+    --green: #1D9A17;
     --white: #ffffff;
     --max-width: 1200px;
 }
@@ -27,6 +28,13 @@
     text-align: center;
 }
 
+.banner__subheader {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-align: center;
+}
+
 .section__header {
     font-size: 3rem;
     font-weight: 700;
@@ -37,7 +45,7 @@
 .section__description {
     font-weight: 500;
     color: var(--text-dark);
-    line-height: 1.75rem;
+    line-height: auto;
     text-align: center;
 }
 
@@ -78,6 +86,7 @@ ul {
 
 html,
 body {
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -157,7 +166,7 @@ nav {
 }
 
 header {
-    background: rgba(0, 0, 0, 0.8) url('../assets/header_bg.jpg');
+    background: url('../assets/header_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -169,6 +178,10 @@ header {
     padding-top: 3rem;
     padding-inline: 1rem;
     width: 100vw;
+    height: auto;
+    /* Changed from 60vh to auto */
+    min-height: 60vh;
+    /* Make it cover the screen */
     overflow: hidden;
 }
 
@@ -198,10 +211,37 @@ header {
     /* Center it horizontally */
 }
 
+.header__content .contact-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: var(--text-dark);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-inline: auto;
+    /* Center horizontally */
+}
+
+.header__content .contact-btn:hover {
+    background-color: var(--green);
+}
+
 @media (max-width: 540px) {
     .header__content h1 {
         font-size: 3rem;
         line-height: 3rem;
+    }
+
+    .header__content .contact-btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
     }
 }
 
@@ -210,6 +250,11 @@ header {
         font-size: 3rem;
         line-height: 3.5rem;
     }
+
+    .header__content .contact-btn {
+        padding: 0.75rem 2rem;
+        font-size: 1.2rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -217,12 +262,10 @@ header {
         font-size: 4rem;
         line-height: 4.5rem;
     }
-}
 
-@media (min-width: 1024px) {
-    .header__content h1 {
-        font-size: 5rem;
-        line-height: 5.5rem;
+    .header__content .contact-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -603,5 +646,33 @@ header {
 @media (width > 1024px) {
     .feature__card {
         padding: 1.5rem;
+    }
+}
+
+.banner {
+    padding-block: 4rem;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.banner__clients {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    animation: scroll 20s linear infinite;
+}
+
+.banner__clients img {
+    height: 50px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
     }
 }
