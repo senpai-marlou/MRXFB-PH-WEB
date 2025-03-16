@@ -380,50 +380,51 @@ header {
 .feature__grid {
     margin-top: 2rem;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
+    /* Increase gap for better spacing */
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjust to three columns */
 }
 
 .feature__card {
-    padding: 1rem;
-    min-height: 200px;
+    padding: 2rem;
+    /* Increase padding for larger cards */
+    min-height: 250px;
+    /* Increase minimum height */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    /* Center align items */
     justify-content: space-between;
     gap: 1rem;
     border-radius: 1rem;
     border: 2px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Center text */
 }
 
 .feature__card span {
     display: inline-block;
-    padding: 5px 11px;
-    font-size: 1.5rem;
+    padding: 10px 20px;
+    /* Increase padding for larger icon */
+    font-size: 2rem;
+    /* Increase icon size */
     color: var(--text-light);
     border-radius: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.feature__card:nth-child(1) span {
-    background-color: #fef2f2;
-}
-
-.feature__card:nth-child(2) span {
-    background-color: #f0fdf4;
-}
-
-.feature__card:nth-child(3) span {
-    background-color: #eff6ff;
-}
-
-.feature__card:nth-child(4) span {
-    background-color: #fefce8;
-}
-
-.feature__card h4 {
-    font-size: 1rem;
+.feature__card h3 {
+    font-size: 1.5rem;
+    /* Increase title size */
     font-weight: 600;
     color: var(--text-dark);
+}
+
+.feature__card p {
+    font-size: 1rem;
+    /* Add subtitle */
+    color: var(--text-light);
 }
 
 .banner__container {
@@ -652,7 +653,7 @@ header {
     }
 
     .feature__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .footer__container {
@@ -676,6 +677,11 @@ header {
 }
 
 @media (max-width: 768px) {
+    .feature__grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for medium screens */
+    }
+
     .footer__container {
         grid-template-columns: repeat(2, 1fr);
         /* Two columns for medium screens */
@@ -683,6 +689,11 @@ header {
 }
 
 @media (max-width: 540px) {
+    .feature__grid {
+        grid-template-columns: 1fr;
+        /* Single column for small screens */
+    }
+
     .footer__container {
         grid-template-columns: 1fr;
         /* Single column for small screens */
