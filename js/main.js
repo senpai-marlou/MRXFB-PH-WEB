@@ -105,5 +105,5 @@ ScrollReveal().reveal(".banner__container .section__description", {
 });
 ScrollReveal().reveal(".banner__btn", {
     ...scrollRevealOption,
-    delay: 1000,
+    delay: 500,
 });
