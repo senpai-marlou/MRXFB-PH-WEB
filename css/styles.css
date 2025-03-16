@@ -157,14 +157,16 @@ nav {
 }
 
 header {
-    background-image: url('../assets/header_bg.jpg');
+    background: rgba(0, 0, 0, 0.8) url('../assets/header_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 8rem;
+    justify-content: center;
+    /* Center content vertically */
+    padding-top: 3rem;
     padding-inline: 1rem;
     width: 100vw;
     overflow: hidden;
@@ -198,7 +200,7 @@ header {
 
 @media (max-width: 540px) {
     .header__content h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         line-height: 3rem;
     }
 }
@@ -534,6 +536,7 @@ header {
 
 
     .header__content {
+        padding-top: 3rem;
         grid-area: 1/2;
         text-align: center;
     }
