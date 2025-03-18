@@ -30,6 +30,13 @@
     text-align: center;
 }
 
+.section__subheader2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: left;
+}
+
 .banner__subheader {
     font-size: 1.3rem;
     font-weight: 600;
@@ -44,11 +51,30 @@
     text-align: center;
 }
 
+.section__header2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: left;
+    line-height: 3.5rem;
+}
+
 .section__description {
     font-weight: 500;
     color: var(--text-dark);
     line-height: auto;
     text-align: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    /* Center horizontally */
+}
+
+.section__description2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: auto;
+    text-align: left;
     max-width: var(--max-width);
     margin: 0 auto;
     /* Center horizontally */
@@ -267,6 +293,27 @@ header {
     transform: translateX(5px);
 }
 
+.about-header {
+    background: url('../assets/header_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-inline: 1rem;
+    width: 100vw;
+    height: auto;
+    min-height: 55vh;
+    overflow: hidden;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 @media (max-width: 540px) {
     .header__content h1 {
         font-size: 3rem;
@@ -286,6 +333,14 @@ header {
 @media (max-width: 768px) {
     .btn-stroke {
         color: var(--white);
+    }
+
+    .section__header2 {
+        text-align: center;
+    }
+
+    .section__subheader2 {
+        text-align: center;
     }
 }
 
@@ -332,6 +387,48 @@ header {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+}
+
+.about__btn2 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about__btn2 .btn {
+    padding: 1rem 2.5rem;
+    /* Increase padding for larger button */
+    font-size: 1.2rem;
+    /* Increase font size */
+}
+
+.about-us__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.about-us__title {
+    text-align: left;
+}
+
+.about-us__description {
+    text-align: left;
+}
+
+.about-us__description .section__description {
+    margin-block: 1rem;
+}
+
+.about-us__container {
+    display: grid;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.about-us__container .section__description {
+    margin-block: 1rem;
 }
 
 .fleet__container {
@@ -674,6 +771,11 @@ header {
         justify-content: flex-start;
     }
 
+    .about__btn2 {
+        justify-content: center;
+    }
+
+
     .fleet__wrapper-1 {
         margin-bottom: 2rem;
     }
@@ -732,6 +834,20 @@ header {
     .back-to-top {
         display: none !important;
     }
+
+    .about-us__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-us__title,
+    .about-us__description {
+        text-align: center;
+    }
+
+    .section__description2 {
+        text-align: center;
+    }
 }
 
 @media (max-width: 540px) {
@@ -758,6 +874,8 @@ header {
     align-items: center;
     gap: 6rem;
     animation: scroll 20s linear infinite;
+    margin: 0 auto;
+    /* Center horizontally */
 }
 
 .banner__clients img {
@@ -802,4 +920,221 @@ header {
     color: var(--white);
     background-color: var(--green);
     transform: translateY(-5px);
+}
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-1946 {
+        padding: 2rem 1rem;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+
+    #hero-1946 .cs-container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    #hero-1946 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        /* 40px - 52px */
+        margin-bottom: clamp(2.5rem, 5vw, 3.25rem);
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    #hero-1946 .cs-flex {
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+
+    #hero-1946 .cs-title {
+        /* 39px - 61px */
+        font-size: clamp(2.438rem, 5vw, 3.813rem);
+    }
+
+    #hero-1946 .cs-text {
+        margin-bottom: 1.25rem;
+    }
+
+    #hero-1946 .cs-button-solid {
+        font-size: 1rem;
+        font-weight: 700;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-align: center;
+        text-decoration: none;
+        min-width: 9.375rem;
+        margin: 0;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        /* 32px - 48px */
+        padding: 0 clamp(2rem, 4vw, 3rem);
+        background-color: var(--primary);
+        color: var(--bodyTextColorWhite);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    #hero-1946 .cs-button-solid:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    #hero-1946 .cs-picture {
+        width: 100%;
+        /* 280px - 510px */
+        height: clamp(17.5rem, 58.6vw, 31.875rem);
+        /* 16px - 20px */
+        margin-bottom: clamp(1rem, 2vw, 1.25rem);
+        display: block;
+        position: relative;
+    }
+
+    #hero-1946 .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2rem;
+        position: absolute;
+    }
+
+    #hero-1946 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(12, 1fr);
+        /* 16px - 20px */
+        gap: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    #hero-1946 .cs-item {
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        /* 24px - 32px */
+        padding: clamp(1.5rem, 3vw, 2rem);
+        background-color: #F7F7F7;
+        border-radius: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column: span 12;
+        position: relative;
+        z-index: 1;
+        transition: border-color 0.3s;
+    }
+
+    #hero-1946 .cs-item:hover {
+        border-color: var(--primary);
+    }
+
+    #hero-1946 .cs-item:hover .cs-h3 {
+        color: var(--primary);
+    }
+
+    #hero-1946 .cs-item:hover .cs-icon {
+        transform: rotateY(360deg);
+    }
+
+    #hero-1946 .cs-icon-picture {
+        margin-bottom: 1.25rem;
+        perspective: 700px;
+        transform-style: preserve-3d;
+    }
+
+    #hero-1946 .cs-icon {
+        width: 2.5rem;
+        height: auto;
+        display: block;
+        transition: transform 0.5s;
+    }
+
+    #hero-1946 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        text-align: inherit;
+        margin: 0;
+        margin-bottom: 0.75rem;
+        color: var(--headerColor);
+        transition: color 0.3s;
+    }
+
+    #hero-1946 .cs-item-text {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        text-align: inherit;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-1946 .cs-text {
+        font-size: 1.25rem;
+    }
+
+    #hero-1946 .cs-item {
+        text-align: left;
+        margin: 0;
+        align-items: flex-start;
+        grid-column: span 6;
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #hero-1946 .cs-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #hero-1946 .cs-title {
+        max-width: 46.875rem;
+    }
+
+    #hero-1946 .cs-item {
+        grid-column: span 3;
+    }
+}
+
+/* Large Desktop 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #hero-1946 .cs-title {
+        margin: 0;
+    }
+
+    #hero-1946 .cs-container {
+        flex-direction: column;
+    }
+
+    #hero-1946 .cs-content {
+        text-align: left;
+        max-width: var(--max-width);
+        gap: 1.25rem;
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }

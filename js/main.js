@@ -17,6 +17,20 @@ navLinks.addEventListener("click", (e) => {
     menuBtnIcon.setAttribute("class", "ri-menu-3-line");
 });
 
+document.querySelectorAll(".nav__links a").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = e.target.getAttribute("href");
+        window.location.href = target;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".scroll-reveal").forEach(element => {
+        element.classList.remove("hidden");
+    });
+});
+
 const scrollRevealOption = {
     distance: "50px",
     origin: "bottom",
