@@ -89,7 +89,7 @@ ScrollReveal().reveal(".about__content .section__description", {
 });
 ScrollReveal().reveal(".about__btn", {
     ...scrollRevealOption,
-    delay: 1300,
+    delay: 1100,
 });
 
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
