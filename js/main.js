@@ -25,6 +25,34 @@ document.querySelectorAll(".nav__links a").forEach(link => {
     });
 });
 
+const faq = document.querySelector(".faq__grid");
+
+if (faq) {
+    faq.addEventListener("click", (e) => {
+        const faqCard = e.target.closest(".faq__card");
+        if (faqCard) {
+            const content = faqCard.querySelector(".faq__content");
+            if (faqCard.classList.contains("active")) {
+                content.style.maxHeight = "0px";
+                content.style.opacity = "0";
+                faqCard.classList.remove("active");
+            } else {
+                // Collapse all open FAQs first
+                document.querySelectorAll(".faq__card.active").forEach((item) => {
+                    item.querySelector(".faq__content").style.maxHeight = "0px";
+                    item.querySelector(".faq__content").style.opacity = "0";
+                    item.classList.remove("active");
+                });
+
+                // Expand the clicked FAQ
+                faqCard.classList.add("active");
+                content.style.maxHeight = content.scrollHeight + "px"; // Dynamic height
+                content.style.opacity = "1";
+            }
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".scroll-reveal").forEach(element => {
         element.classList.remove("hidden");
@@ -92,6 +120,52 @@ ScrollReveal().reveal(".about__btn", {
     delay: 1100,
 });
 
+ScrollReveal().reveal(".about-us__title", {
+    ...scrollRevealOption,
+    origin: "left",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".about-us__description", {
+    ...scrollRevealOption,
+    origin: "right",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".cs-item", {
+    ...scrollRevealOption,
+    interval: 200,
+});
+
+ScrollReveal().reveal(".feature__card", {
+    ...scrollRevealOption,
+    interval: 200,
+});
+
+ScrollReveal().reveal(".section__subheader", {
+    ...scrollRevealOption,
+    origin: "top",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".section__header", {
+    ...scrollRevealOption,
+    origin: "left",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".section__description", {
+    ...scrollRevealOption,
+    origin: "bottom",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".faq__card", {
+    ...scrollRevealOption,
+    origin: "bottom",
+    interval: 200,
+});
+
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
 const fleet2 = document.querySelector(".fleet__wrapper-2 .fleet__images");
 
@@ -143,3 +217,5 @@ ScrollReveal().reveal('.scroll-reveal', {
     duration: 1000,
     delay: 200,
 });
+
+
