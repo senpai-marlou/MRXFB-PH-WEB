@@ -6,6 +6,7 @@
     --extra-light: #f3f4f6;
     --green: #1D9A17;
     --white: #ffffff;
+    --grey-light: #f4f4f4;
     --max-width: 1200px;
 }
 
@@ -268,6 +269,12 @@ header {
     }
 }
 
+@media (max-width: 768px) {
+    .btn-stroke {
+        color: var(--white);
+    }
+}
+
 @media (min-width: 540px) {
     .header__content h1 {
         font-size: 3rem;
@@ -380,7 +387,7 @@ header {
 .feature__grid {
     margin-top: 2rem;
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     /* Increase gap for better spacing */
     grid-template-columns: repeat(3, 1fr);
     /* Adjust to three columns */
@@ -405,13 +412,10 @@ header {
 
 .feature__card span {
     display: inline-block;
-    padding: 10px 20px;
-    /* Increase padding for larger icon */
-    font-size: 2rem;
+    font-size: 4rem;
     /* Increase icon size */
-    color: var(--text-light);
-    border-radius: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: var(--green);
+    /* Change icon color to green */
 }
 
 .feature__card h3 {
@@ -428,7 +432,7 @@ header {
 }
 
 .banner__container {
-    background-color: var(--green);
+    background-color: var(--grey-light);
     border-radius: 1.5rem;
 }
 
@@ -436,14 +440,16 @@ header {
     max-width: 700px;
     margin-inline: auto;
     margin-bottom: 1rem;
-    color: var(--white);
+    color: var(--text-dark);
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .banner__container .section__description {
     max-width: 500px;
     margin-inline: auto;
     margin-bottom: 2rem;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .banner__btn {
@@ -715,7 +721,7 @@ header {
 }
 
 .banner__clients img {
-    height: 50px;
+    height: 40px;
 }
 
 @keyframes scroll {
