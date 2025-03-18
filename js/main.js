@@ -81,16 +81,15 @@ ScrollReveal().reveal(".about__content .section__subheader", {
 });
 ScrollReveal().reveal(".about__content .section__header", {
     ...scrollRevealOption,
-    delay: 1000,
+    delay: 600,
 });
 ScrollReveal().reveal(".about__content .section__description", {
     ...scrollRevealOption,
-    delay: 1500,
-    interval: 500,
+    delay: 1000,
 });
 ScrollReveal().reveal(".about__btn", {
     ...scrollRevealOption,
-    delay: 2500,
+    delay: 1300,
 });
 
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
@@ -123,7 +122,7 @@ bannerContent.forEach((item) => {
 
 ScrollReveal().reveal(".feature__card", {
     ...scrollRevealOption,
-    interval: 500,
+    interval: 200,
 });
 
 ScrollReveal().reveal(".banner__container .section__header", {
