@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 2rem;
     outline: none;
     border: none;
     font-size: 1rem;
@@ -67,12 +67,14 @@
     color: var(--white);
     background-color: var(--text-dark);
     border-radius: 5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: var(--text-light);
+    background-color: var(--green);
+    transform: translateY(-3px);
 }
 
 .btn-stroke {
@@ -82,12 +84,15 @@
     /* Change text color to match border */
     background-color: transparent;
     /* Make background transparent */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .btn-stroke:hover {
-    background-color: var(--text-dark);
+    background-color: var(--green);
+    border: 2px solid var(--green);
     color: var(--white);
     /* Change text color on hover */
+    transform: translateY(-3px);
 }
 
 img {
@@ -142,7 +147,7 @@ nav {
 }
 
 .nav__logo .logo-light {
-    max-width: 35px;
+    max-width: 80px;
 }
 
 .nav__logo .logo-dark {
@@ -253,6 +258,15 @@ header {
     background-color: var(--green);
 }
 
+.header__content .contact-btn .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header__content .contact-btn:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
 @media (max-width: 540px) {
     .header__content h1 {
         font-size: 3rem;
@@ -294,8 +308,8 @@ header {
     }
 
     .header__content .contact-btn {
-        padding: 1rem 2.5rem;
-        font-size: 1.4rem;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -361,7 +375,7 @@ header {
 
 .fleet__images img {
     border-radius: 1rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0); */
 }
 
 .fleet__wrapper-1 .fleet__images img {
@@ -405,9 +419,18 @@ header {
     justify-content: space-between;
     gap: 1rem;
     border-radius: 1rem;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.15);
     text-align: center;
     /* Center text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out, transform 0.3s;
+    /* Add transition for smooth hover effect */
+}
+
+.feature__card:hover {
+    border-color: var(--green);
+    /* Change border color on hover */
+    transform: translateY(-3px);
 }
 
 .feature__card span {
@@ -437,7 +460,7 @@ header {
 }
 
 .banner__container .section__header {
-    max-width: 700px;
+    max-width: 800px;
     margin-inline: auto;
     margin-bottom: 1rem;
     color: var(--text-dark);
@@ -460,6 +483,19 @@ header {
 .banner__btn .btn {
     color: var(--text-dark);
     background-color: var(--white);
+    padding: 1rem 2rem;
+    /* Increase padding for larger button */
+    font-size: 1.2rem;
+    /* Increase font size */
+}
+
+.banner__btn .btn .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.banner__btn .btn:hover .arrow-icon {
+    transform: translateX(3px);
 }
 
 .footer__container {
@@ -481,7 +517,7 @@ header {
 }
 
 .footer__logo img {
-    max-width: 35px;
+    max-width: 80px;
 }
 
 .footer__col .section__description {
@@ -584,7 +620,7 @@ header {
 
     .nav__logo .logo-dark {
         display: flex;
-        max-width: 35px;
+        max-width: 80px;
     }
 
     .nav__menu__btn {
@@ -692,6 +728,10 @@ header {
         grid-template-columns: repeat(2, 1fr);
         /* Two columns for medium screens */
     }
+
+    .back-to-top {
+        display: none !important;
+    }
 }
 
 @media (max-width: 540px) {
@@ -732,4 +772,34 @@ header {
     100% {
         transform: translateX(-50%);
     }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top i {
+    font-size: 1.5rem;
+    /* Increase the size of the arrow icon */
+}
+
+.back-to-top:hover {
+    color: var(--white);
+    background-color: var(--green);
+    transform: translateY(-5px);
 }

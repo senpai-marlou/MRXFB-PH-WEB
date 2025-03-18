@@ -23,7 +23,22 @@ const scrollRevealOption = {
     duration: 800,
 };
 
+const backToTopBtn = document.getElementById("back-to-top");
 
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = "flex";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
 
 ScrollReveal().reveal(".header__content h1, .header__content h3", {
     ...scrollRevealOption,
