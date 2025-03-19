@@ -166,6 +166,12 @@ ScrollReveal().reveal(".faq__card", {
     interval: 200,
 });
 
+ScrollReveal().reveal(".cs-picture", {
+    ...scrollRevealOption,
+    origin: "bottom",
+    interval: 200,
+});
+
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
 const fleet2 = document.querySelector(".fleet__wrapper-2 .fleet__images");
 
