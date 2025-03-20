@@ -202,6 +202,11 @@ ScrollReveal().reveal(".cs-picture", {
     interval: 200,
 });
 
+ScrollReveal().reveal(".testimonials__grid", {
+    ...scrollRevealOption,
+    origin: "bottom",
+});
+
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
 const fleet2 = document.querySelector(".fleet__wrapper-2 .fleet__images");
 
