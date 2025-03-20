@@ -205,6 +205,7 @@ ScrollReveal().reveal(".cs-picture", {
 ScrollReveal().reveal(".testimonials__grid", {
     ...scrollRevealOption,
     origin: "bottom",
+    delay: 300,
 });
 
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
