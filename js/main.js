@@ -59,6 +59,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonialsGrid = document.querySelector(".testimonials__grid");
+    if (testimonialsGrid) {
+        const cards = testimonialsGrid.querySelectorAll(".card");
+        if (cards.length > 3) {
+            testimonialsGrid.style.overflowX = "auto";
+            testimonialsGrid.style.scrollSnapType = "x mandatory";
+            cards.forEach(card => {
+                card.style.scrollSnapAlign = "start";
+            });
+        }
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonialsGrid = document.querySelector(".testimonials__grid");
+    const leftNav = document.querySelector(".testimonials__nav--left");
+    const rightNav = document.querySelector(".testimonials__nav--right");
+
+    if (testimonialsGrid && leftNav && rightNav) {
+        leftNav.addEventListener("click", () => {
+            testimonialsGrid.scrollBy({ left: -testimonialsGrid.querySelector(".card").clientWidth, behavior: "smooth" });
+        });
+
+        rightNav.addEventListener("click", () => {
+            testimonialsGrid.scrollBy({ left: testimonialsGrid.querySelector(".card").clientWidth, behavior: "smooth" });
+        });
+    }
+});
+
 const scrollRevealOption = {
     distance: "50px",
     origin: "bottom",
